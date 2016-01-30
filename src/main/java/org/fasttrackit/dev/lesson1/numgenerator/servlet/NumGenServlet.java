@@ -1,5 +1,6 @@
 package org.fasttrackit.dev.lesson1.numgenerator.servlet;
 
+import javafx.scene.input.DataFormat;
 import org.fasttrackit.dev.lesson1.numgenerator.NumGeneratorBusinessLogic;
 
 import javax.servlet.http.HttpServlet;
@@ -84,7 +85,11 @@ public class NumGenServlet extends HttpServlet {
                 // getDiff
                 double time= nbl.getDiff();
 
-                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint + "\", \"keyNrGuesses\":\"" + nrGuesses + "\", \"timp\":\""+ time+ "\"}"; //+getdiff
+
+                //get data & hour
+                String data=nbl.getToday();
+
+                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint + "\", \"keyNrGuesses\":\"" + nrGuesses + "\", \"timp\":\""+ time + "\", \"data_azi\":\""+ data + "\" }";
                 System.out.println(jsonResponse);
             } else {
                 jsonResponse = "{\"keyError\":\"WRONGNUMBERFORMAT\"}";

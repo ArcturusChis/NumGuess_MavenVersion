@@ -47,6 +47,9 @@
                  //citire timp
                  var timp =jSonMessage.timp;
 
+                 //citire data
+                 var ora=jSonMessage.data_azi;
+
 
                  if(keySuccess=="false") {
                      if (keyHint == "higher")
@@ -59,7 +62,7 @@
                  {
 
                  // citesc
-                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses and your time is:"+ timp + " seconds.";
+                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses and your time is:"+ timp + " seconds." + "You guessed at:" + ora; //+data si ora
                  }
              }
          }

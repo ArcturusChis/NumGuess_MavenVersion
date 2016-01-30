@@ -1,5 +1,9 @@
 package org.fasttrackit.dev.lesson1.numgenerator;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by condor on 29/11/14.
  * FastTrackIT, 2015
@@ -26,6 +30,7 @@ public class NumGeneratorBusinessLogic {
     private int numberOfGuesses;
     private int generatedNumber;
     private String hint;
+    public String today;
 
     public NumGeneratorBusinessLogic(){
         resetNumberGenerator();
@@ -45,6 +50,11 @@ public class NumGeneratorBusinessLogic {
 
     public boolean isFirstTime(){
         return isFirstTime;
+    }
+
+    //get data
+    public String getToday() {
+        return today;
     }
 
     public double getDiff() {return diff; }
@@ -80,6 +90,14 @@ public class NumGeneratorBusinessLogic {
 
             //sout
             System.out.println("timpul scurs "+diff);
+
+            //data si ora
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+            Date date = new Date();
+
+            today = dateFormat.format(date);
+            System.out.println(today);
 
             hint="";
             successfulGuess = true;
