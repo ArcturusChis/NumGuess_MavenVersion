@@ -28,7 +28,7 @@
                  var jSonMessage = JSON.parse(xmlHttp.responseText);
                  var keyRestartGame=jSonMessage.keyRestartGame;
                  if (keyRestartGame != undefined && keyRestartGame.length > 0) {
-                     alert("Restart cu succes, jocul a reinceput!");
+                     alert("Restart succesfully, the game is starting! ");
                      document.getElementById("number").value="";
                      return;
                  }
