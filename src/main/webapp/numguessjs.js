@@ -40,7 +40,13 @@
                  }
                 var keySuccess = jSonMessage.keySuccess;
                  var keyHint = jSonMessage.keyHint;
+
+
                  var keyNrGuesses = jSonMessage.keyNrGuesses;
+
+                 //citire timp
+                 var timp =jSonMessage.timp;
+
 
                  if(keySuccess=="false") {
                      if (keyHint == "higher")
@@ -51,7 +57,9 @@
                  else
                  if(keySuccess=="true")
                  {
-                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses.";
+
+                 // citesc
+                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses and your time is:"+ timp + " seconds.";
                  }
              }
          }
